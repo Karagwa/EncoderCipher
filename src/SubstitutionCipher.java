@@ -30,12 +30,12 @@ public class SubstitutionCipher implements MessageEncoder {
         }
         while (shift > 26);
     }
-    public String inputWord() {
+    public void inputWord() {
 
         System.out.println("Enter the word you want to encode: ");
         this.word=keyboard.nextLine();
         System.out.println(this.word);
-        return this.word;
+        
     }
 
     public String encode() {
