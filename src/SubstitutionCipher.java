@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class SubstitutionCipher implements MessageEncoder {
-    public int shift;
-    public String word;
+    private int shift;
+    private String word;
     char[] letters = {'a', 'b', 'c', 'd', 'e',
             'f', 'g', 'h', 'i', 'j',
             'k', 'l', 'm', 'n', 'o',
@@ -17,6 +17,21 @@ public class SubstitutionCipher implements MessageEncoder {
         this.word="no words yet";
     }
 
+    public void setShift(int shift) {
+        this.shift = shift;
+    }
+
+    public int getShift() {
+        return shift;
+    }
+
+    public void setWord(String word){
+        this.word=word;
+}
+
+    public String getWord() {
+        return word;
+    }
 
     Scanner keyboard = new Scanner(System.in);
 
