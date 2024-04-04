@@ -53,29 +53,37 @@ public class SubstitutionCipher implements MessageEncoder {
         
     }
 
-    public String encode() {
+    
+    //still working on it
+    
+  
+    public String encode(String plainText) {
         System.out.println("Encoding...");
         StringBuilder encoded = new StringBuilder();
-        for (int i = 0; i < this.word.length(); i++) {
-            char c = this.word.charAt(i);
+        for (int i = 0; i < plainText.length(); i++) {
+            char c = plainText.charAt(i);
             int index = c - 'a'; // assuming 'word' is all lowercase
             int shiftedIndex = (index + this.shift) % 26;
             encoded.append(letters[shiftedIndex]);
         }
         return encoded.toString();
     }
-    //still working on it
-    
-   public String encode(String plainText) {
-        System.out.println("Encoding...");
-        plainText =this.word;
-        for (int i = 0; i < plainText.length(); i++) {
-            plainText = plainText.replace( word.charAt(i),letters[shift]);
+
+    public String decode(String encodedText){
+        System.out.println("Deccoding...");
+        StringBuilder decoded= new StringBuilder();
+        for (int i =0; i<encodedText.length(); i++){
+            char c = encodedText.charAt(i);
+            int index = c - 'a';
+            int shiftedIndex = (index - this.shift) % 26;
+            if (shiftedIndex < 0){
+                shiftedIndex += 26;
+            }
+            decoded.append(letters[shiftedIndex]);
 
         }
-        return plainText;
+        return decoded.toString();
     }
 
-
-
 }
+
