@@ -7,6 +7,7 @@ public class Encoderdemo {
         encoding.inputWord();
         System.out.println(encoding.encode(encoding.getWord()));
         System.out.println(encoding.decode(encoding.getWord()));
+        
 
     }
 }
